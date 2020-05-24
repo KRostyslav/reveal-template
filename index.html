@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>Lecture 8. DOM</title>
+		<title>Lecture</title>
 
 		<link rel="stylesheet" href="dist/reset.css">
 		<link rel="stylesheet" href="dist/reveal.css">
@@ -17,7 +17,7 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-        <section><h1>Web Design and Development. Lecture 8</h1></section>
+        <section><h1> Lecture </h1></section>
         <section>
           <h2>Content</h2>
           <ol>
@@ -32,7 +32,7 @@
         </section>
 
         <section>
-          <h2>Lecture 8. JavaScript. DOM</h2>
+          <h2> JavaScript. DOM</h2>
         </section>
 
 <section>
@@ -74,6 +74,8 @@ response.end("Hello World\n");
 		<script src="plugin/highlight/highlight.js"></script>
 		<script src="plugin/search/search.js"></script>
 		<script src="plugin/zoom/zoom.js"></script>
+
+		<script src="plugin/pdfexport/pdfexport.js"></script>
 		<script>
 			Reveal.initialize({
 				hash: true,
@@ -85,7 +87,7 @@ response.end("Hello World\n");
 					{ src: 'plugin/code-focus/vendor/highlight.pack.js' },
     				{ src: 'plugin/code-focus/reveal-code-focus.js', async: true, callback: function() { RevealCodeFocus(); }}
 				],		
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealSearch, RevealZoom ],
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealSearch, RevealZoom, PdfExport ],
 				menu: {
 					// Specifies which side of the presentation the menu will 
 					// be shown. Use 'left' or 'right'.
@@ -138,7 +140,7 @@ response.end("Hello World\n");
 					//     { name: 'White', theme: 'css/theme/white.css' },
 					//     { name: 'League', theme: 'css/theme/league.css' }
 					// ]
-					themes: false,
+					themes: true,
 
 					// Specifies the path to the default theme files. If your
 					// presentation uses a different path to the standard reveal
@@ -146,7 +148,7 @@ response.end("Hello World\n");
 					// when 'themes' is set to 'true'. If you provide your own 
 					// list of themes or 'themes' is set to 'false' the 
 					// 'themesPath' option is ignored.
-					themesPath: 'css/theme/',
+					themesPath: 'dist/theme/',
 
 					// Specifies if the transitions menu panel will be shown.
 					// Set to 'true' to show the transitions menu panel with
@@ -154,7 +156,7 @@ response.end("Hello World\n");
 					// array to specify the transitions to make available in
 					// the transitions panel, for example...
 					// ['None', 'Fade', 'Slide']
-					transitions: false,
+					transitions: true,
 
 					// Adds a menu button to the slides to open the menu panel.
 					// Set to 'false' to hide the button.
@@ -198,6 +200,7 @@ response.end("Hello World\n");
 					// and the menu will not attempt to load the font-awesome library.
 					loadIcons: true
 				},
+				pdfExportShortcut: 'E',
 				copycode: {
 					copy: "Copy",
 					copied: "Copied!",
