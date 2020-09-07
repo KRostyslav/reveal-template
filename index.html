@@ -1,216 +1,299 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
 
-		<title>Lecture</title>
+    <title>Presentation</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"
+    />
 
-		<link rel="stylesheet" href="dist/reset.css">
-		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/black.css" id="theme">
+    <link rel="stylesheet" href="dist/reset.css" />
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="dist/theme/black.css" id="theme" />
 
-		<!-- Theme used for syntax highlighted code -->
-		<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
-		<link rel="stylesheet" href="plugin/copycode/copycode.css">
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-        <section><h1> Lecture </h1></section>
-        <section>
-          <h2>Content</h2>
-          <ol>
-            <li>HTML/HTML5</li>
-            <li>CSS</li>
-            <li>Preproccesors and Postproccessors. SASS</li>
-            <li><b>EcmaScript2016</b></li>
-            <li>Git</li>
-            <li>npm</li>
-            <li>...</li>
-          </ol>
-        </section>
+    <!-- Theme used for syntax highlighted code -->
+    <link
+      rel="stylesheet"
+      href="plugin/highlight/monokai.css"
+      id="highlight-theme"
+    />
+    <link rel="stylesheet" href="plugin/copycode/copycode.css" />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section
+          data-markdown="md/presentation.md"
+          data-separator="^\n\n\n"
+          data-separator-vertical="^\n\n"
+          data-separator-notes="Note:"
+        ></section>
+      </div>
+    </div>
 
-        <section>
-          <h2> JavaScript. DOM</h2>
-        </section>
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script src="plugin/search/search.js"></script>
+    <script src="plugin/zoom/zoom.js"></script>
+    <script src="plugin/chalkboard/plugin.js"></script>
 
-<section>
-  <pre><code>
-  // Useless comment.
-  alert('hi');
-  </pre></code>
-  <p class="fragment" data-code-focus="1">
-    When this fragment is shown, the first line of code (`span.line`) will have the `"focus"` class added to it.
-  </p>
-  <p class="fragment" data-code-focus="1-2">
-    Another fragment. This time, both lines will now have the `"focus"` class.
-  </p>
-</section>
+    <script src="plugin/pdfexport/pdfexport.js"></script>
+    <script>
+      Reveal.initialize({
+        hash: true,
+        dependencies: [
+          {
+            src: 'plugin/title-footer/title-footer.js',
+            async: true,
+            callback: function () {
+              title_footer.initialize();
+            },
+          },
+          { src: 'plugin/menu/menu.js' },
+          {
+            src:
+              '//cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js',
+          },
+          { src: 'plugin/copycode/copycode.js', async: false },
+          { src: 'plugin/code-focus/vendor/highlight.pack.js' },
+          {
+            src: 'plugin/code-focus/reveal-code-focus.js',
+            async: true,
+            callback: function () {
+              RevealCodeFocus();
+            },
+          },
+        ],
+        plugins: [
+          RevealMarkdown,
+          RevealHighlight,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom,
+          RevealChalkboard,
+          PdfExport,
+        ],
+        chalkboard: {
+          boardmarkerWidth: 3,
+          chalkWidth: 7,
+          chalkEffect: 1.0,
+          src: null,
+          readOnly: undefined,
+          toggleChalkboardButton: {
+            left: '70px',
+            bottom: '30px',
+            top: 'auto',
+            right: 'auto',
+          },
+          toggleNotesButton: {
+            left: '110px',
+            bottom: '30px',
+            top: 'auto',
+            right: 'auto',
+          },
+          transition: 800,
+          theme: 'chalkboard',
+          background: ['rgba(127,127,127,.1)', path + 'img/blackboard.png'],
+          grid: { color: 'rgb(50,50,10,0.5)', distance: 80, width: 2 },
+          eraser: { src: path + 'img/sponge.png', radius: 20 },
+          boardmarkers: [
+            {
+              color: 'rgba(100,100,100,1)',
+              cursor: 'url(' + path + 'img/boardmarker-black.png), auto',
+            },
+            {
+              color: 'rgba(30,144,255, 1)',
+              cursor: 'url(' + path + 'img/boardmarker-blue.png), auto',
+            },
+            {
+              color: 'rgba(220,20,60,1)',
+              cursor: 'url(' + path + 'img/boardmarker-red.png), auto',
+            },
+            {
+              color: 'rgba(50,205,50,1)',
+              cursor: 'url(' + path + 'img/boardmarker-green.png), auto',
+            },
+            {
+              color: 'rgba(255,140,0,1)',
+              cursor: 'url(' + path + 'img/boardmarker-orange.png), auto',
+            },
+            {
+              color: 'rgba(150,0,20150,1)',
+              cursor: 'url(' + path + 'img/boardmarker-purple.png), auto',
+            },
+            {
+              color: 'rgba(255,220,0,1)',
+              cursor: 'url(' + path + 'img/boardmarker-yellow.png), auto',
+            },
+          ],
+          chalks: [
+            {
+              color: 'rgba(255,255,255,0.5)',
+              cursor: 'url(' + path + 'img/chalk-white.png), auto',
+            },
+            {
+              color: 'rgba(96, 154, 244, 0.5)',
+              cursor: 'url(' + path + 'img/chalk-blue.png), auto',
+            },
+            {
+              color: 'rgba(237, 20, 28, 0.5)',
+              cursor: 'url(' + path + 'img/chalk-red.png), auto',
+            },
+            {
+              color: 'rgba(20, 237, 28, 0.5)',
+              cursor: 'url(' + path + 'img/chalk-green.png), auto',
+            },
+            {
+              color: 'rgba(220, 133, 41, 0.5)',
+              cursor: 'url(' + path + 'img/chalk-orange.png), auto',
+            },
+            {
+              color: 'rgba(220,0,220,0.5)',
+              cursor: 'url(' + path + 'img/chalk-purple.png), auto',
+            },
+            {
+              color: 'rgba(255,220,0,0.5)',
+              cursor: 'url(' + path + 'img/chalk-yellow.png), auto',
+            },
+          ],
+        },
+        menu: {
+          // Specifies which side of the presentation the menu will
+          // be shown. Use 'left' or 'right'.
+          side: 'left',
 
-        <section>
-<pre>
-<code>	
-const http = require("http");
-http.createServer(function (request, response) {
-response.writeHead(200, {"Content-Type": "text/plain"});
-response.end("Hello World\n");
-}).listen(8081);
-</code>
-</pre>
-		</section>
-        
+          // Specifies the width of the menu.
+          // Can be one of the following:
+          // 'normal', 'wide', 'third', 'half', 'full', or
+          // any valid css length value
+          width: 'third',
 
-        <section>
-          <p><a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript">JavaScript — Dynamic client-side scripting</a></p>
-          <p><a href="http://eloquentjavascript.net/03_functions.html">Eloquent javascript</a></p>
-        </section>
-			</div>
-		</div>
+          // Add slide numbers to the titles in the slide list.
+          // Use 'true' or format string (same as reveal.js slide numbers)
+          numbers: true,
 
-		<script src="dist/reveal.js"></script>
-		<script src="plugin/notes/notes.js"></script>
-		<script src="plugin/markdown/markdown.js"></script>
-		<script src="plugin/highlight/highlight.js"></script>
-		<script src="plugin/search/search.js"></script>
-		<script src="plugin/zoom/zoom.js"></script>
+          // Specifies which slide elements will be used for generating
+          // the slide titles in the menu. The default selects the first
+          // heading element found in the slide, but you can specify any
+          // valid css selector and the text from the first matching
+          // element will be used.
+          // Note: that a section data-menu-title attribute or an element
+          // with a menu-title class will take precedence over this option
+          titleSelector: 'h1, h2, h3, h4, h5, h6',
 
-		<script src="plugin/pdfexport/pdfexport.js"></script>
-		<script>
-			Reveal.initialize({
-				hash: true,
-				dependencies: [
-					{ src: 'plugin/title-footer/title-footer.js', async: true, callback: function() { title_footer.initialize(); } },
-					{ src: 'plugin/menu/menu.js' },
-					{ src: '//cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js'},
-    				{ src: 'plugin/copycode/copycode.js', async: false },
-					{ src: 'plugin/code-focus/vendor/highlight.pack.js' },
-    				{ src: 'plugin/code-focus/reveal-code-focus.js', async: true, callback: function() { RevealCodeFocus(); }}
-				],		
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealSearch, RevealZoom, PdfExport ],
-				menu: {
-					// Specifies which side of the presentation the menu will 
-					// be shown. Use 'left' or 'right'.
-					side: 'left',
+          // If slides do not have a matching title, attempt to use the
+          // start of the text content as the title instead
+          useTextContentForMissingTitles: false,
 
-					// Specifies the width of the menu.
-					// Can be one of the following:
-					// 'normal', 'wide', 'third', 'half', 'full', or
-					// any valid css length value
-					width: 'normal',
+          // Hide slides from the menu that do not have a title.
+          // Set to 'true' to only list slides with titles.
+          hideMissingTitles: false,
 
-					// Add slide numbers to the titles in the slide list.
-					// Use 'true' or format string (same as reveal.js slide numbers)
-					numbers: false,
+          // Adds markers to the slide titles to indicate the
+          // progress through the presentation. Set to 'false'
+          // to hide the markers.
+          markers: true,
 
-					// Specifies which slide elements will be used for generating
-					// the slide titles in the menu. The default selects the first
-					// heading element found in the slide, but you can specify any
-					// valid css selector and the text from the first matching
-					// element will be used.
-					// Note: that a section data-menu-title attribute or an element
-					// with a menu-title class will take precedence over this option
-					titleSelector: 'h1, h2, h3, h4, h5, h6',
+          // Specify custom panels to be included in the menu, by
+          // providing an array of objects with 'title', 'icon'
+          // properties, and either a 'src' or 'content' property.
+          custom: [
+            {
+              title: 'About',
+              icon: '<i class="fa fa-info"></i>',
+              src: 'about.html',
+            },
+          ],
 
-					// If slides do not have a matching title, attempt to use the
-					// start of the text content as the title instead
-					useTextContentForMissingTitles: false,
+          // Specifies the themes that will be available in the themes
+          // menu panel. Set to 'true' to show the themes menu panel
+          // with the default themes list. Alternatively, provide an
+          // array to specify the themes to make available in the
+          // themes menu panel, for example...
+          // [
+          //     { name: 'Black', theme: 'css/theme/black.css' },
+          //     { name: 'White', theme: 'css/theme/white.css' },
+          //     { name: 'League', theme: 'css/theme/league.css' }
+          // ]
+          themes: true,
 
-					// Hide slides from the menu that do not have a title.
-					// Set to 'true' to only list slides with titles.
-					hideMissingTitles: false,
+          // Specifies the path to the default theme files. If your
+          // presentation uses a different path to the standard reveal
+          // layout then you need to provide this option, but only
+          // when 'themes' is set to 'true'. If you provide your own
+          // list of themes or 'themes' is set to 'false' the
+          // 'themesPath' option is ignored.
+          themesPath: 'dist/theme/',
 
-					// Adds markers to the slide titles to indicate the 
-					// progress through the presentation. Set to 'false'
-					// to hide the markers.
-					markers: true,
+          // Specifies if the transitions menu panel will be shown.
+          // Set to 'true' to show the transitions menu panel with
+          // the default transitions list. Alternatively, provide an
+          // array to specify the transitions to make available in
+          // the transitions panel, for example...
+          // ['None', 'Fade', 'Slide']
+          transitions: true,
 
-					// Specify custom panels to be included in the menu, by
-					// providing an array of objects with 'title', 'icon'
-					// properties, and either a 'src' or 'content' property.
-					custom: false,
+          // Adds a menu button to the slides to open the menu panel.
+          // Set to 'false' to hide the button.
+          openButton: true,
 
-					// Specifies the themes that will be available in the themes
-					// menu panel. Set to 'true' to show the themes menu panel
-					// with the default themes list. Alternatively, provide an
-					// array to specify the themes to make available in the
-					// themes menu panel, for example...
-					// [
-					//     { name: 'Black', theme: 'css/theme/black.css' },
-					//     { name: 'White', theme: 'css/theme/white.css' },
-					//     { name: 'League', theme: 'css/theme/league.css' }
-					// ]
-					themes: true,
+          // If 'true' allows the slide number in the presentation to
+          // open the menu panel. The reveal.js slideNumber option must
+          // be displayed for this to take effect
+          openSlideNumber: false,
 
-					// Specifies the path to the default theme files. If your
-					// presentation uses a different path to the standard reveal
-					// layout then you need to provide this option, but only
-					// when 'themes' is set to 'true'. If you provide your own 
-					// list of themes or 'themes' is set to 'false' the 
-					// 'themesPath' option is ignored.
-					themesPath: 'dist/theme/',
+          // If true allows the user to open and navigate the menu using
+          // the keyboard. Standard keyboard interaction with reveal
+          // will be disabled while the menu is open.
+          keyboard: true,
 
-					// Specifies if the transitions menu panel will be shown.
-					// Set to 'true' to show the transitions menu panel with
-					// the default transitions list. Alternatively, provide an
-					// array to specify the transitions to make available in
-					// the transitions panel, for example...
-					// ['None', 'Fade', 'Slide']
-					transitions: true,
+          // Normally the menu will close on user actions such as
+          // selecting a menu item, or clicking the presentation area.
+          // If 'true', the sticky option will leave the menu open
+          // until it is explicitly closed, that is, using the close
+          // button or pressing the ESC or m key (when the keyboard
+          // interaction option is enabled).
+          sticky: false,
 
-					// Adds a menu button to the slides to open the menu panel.
-					// Set to 'false' to hide the button.
-					openButton: true,
+          // If 'true' standard menu items will be automatically opened
+          // when navigating using the keyboard. Note: this only takes
+          // effect when both the 'keyboard' and 'sticky' options are enabled.
+          autoOpen: true,
 
-					// If 'true' allows the slide number in the presentation to
-					// open the menu panel. The reveal.js slideNumber option must 
-					// be displayed for this to take effect
-					openSlideNumber: false,
+          // If 'true' the menu will not be created until it is explicitly
+          // requested by calling RevealMenu.init(). Note this will delay
+          // the creation of all menu panels, including custom panels, and
+          // the menu button.
+          delayInit: false,
 
-					// If true allows the user to open and navigate the menu using
-					// the keyboard. Standard keyboard interaction with reveal
-					// will be disabled while the menu is open.
-					keyboard: true,
+          // If 'true' the menu will be shown when the menu is initialised.
+          openOnInit: false,
 
-					// Normally the menu will close on user actions such as
-					// selecting a menu item, or clicking the presentation area.
-					// If 'true', the sticky option will leave the menu open
-					// until it is explicitly closed, that is, using the close
-					// button or pressing the ESC or m key (when the keyboard 
-					// interaction option is enabled).
-					sticky: false,
-
-					// If 'true' standard menu items will be automatically opened
-					// when navigating using the keyboard. Note: this only takes 
-					// effect when both the 'keyboard' and 'sticky' options are enabled.
-					autoOpen: true,
-
-					// If 'true' the menu will not be created until it is explicitly
-					// requested by calling RevealMenu.init(). Note this will delay
-					// the creation of all menu panels, including custom panels, and
-					// the menu button.
-					delayInit: false,
-
-					// If 'true' the menu will be shown when the menu is initialised.
-					openOnInit: false,
-
-					// By default the menu will load it's own font-awesome library
-					// icons. If your presentation needs to load a different
-					// font-awesome library the 'loadIcons' option can be set to false
-					// and the menu will not attempt to load the font-awesome library.
-					loadIcons: true
-				},
-				pdfExportShortcut: 'E',
-				copycode: {
-					copy: "Copy",
-					copied: "Copied!",
-					timeout: 1000,
-					copybg: "orange",
-					copiedbg: "green",
-					copycolor: "black",
-					copiedcolor: "white"
-				},
-			});
-		</script>
-	</body>
+          // By default the menu will load it's own font-awesome library
+          // icons. If your presentation needs to load a different
+          // font-awesome library the 'loadIcons' option can be set to false
+          // and the menu will not attempt to load the font-awesome library.
+          loadIcons: true,
+        },
+        pdfExportShortcut: 'E',
+        copycode: {
+          copy: 'Copy',
+          copied: 'Copied!',
+          timeout: 1000,
+          copybg: 'orange',
+          copiedbg: 'green',
+          copycolor: 'black',
+          copiedcolor: 'white',
+        },
+      });
+    </script>
+  </body>
 </html>
