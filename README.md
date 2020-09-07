@@ -3,17 +3,17 @@ Template
 
 ## Hotkeys
 
-E - export to pdf
-S - show notes
-F - fullscreen
-O or ESC - show structure
-H - back slide
-L - right slide
-N - next slide
-B - open chalkboard
-C - show marker
-V - hide presentation
-M - show menu
+* E - export to pdf
+* S - show notes
+* F - fullscreen
+* O or ESC - show structure
+* H - back slide
+* L - right slide
+* N - next slide
+* B - open chalkboard
+* C - show marker
+* V - hide presentation
+* M - show menu
 
 Chalkboard
 - Press the 'DEL' key to clear the chalkboard
