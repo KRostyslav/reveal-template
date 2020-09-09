@@ -49,6 +49,27 @@
     <script>
       Reveal.initialize({
         hash: true,
+                // Elapsed-Time-Bar Plugin config
+        // your allotted time for presentation
+        allottedTime: 1 * 60 * 1000, // 60 minutes - 1 hour
+        // - (optional) height of page/time progress bar
+        progressBarHeight: 5,
+        // - (optional) bar color
+        barColor: 'rgb(200,0,0)',
+        // - (optional) bar color when timer is paused
+        pausedBarColor: 'rgba(200,0,0,.6)',
+        keyboard: {
+          // pause/resume time when Enter is pressed
+          13: () => {
+            ElapsedTimeBar.isPaused
+              ? ElapsedTimeBar.resume()
+              : ElapsedTimeBar.pause();
+          },
+          // reset timer when 'r' is pressed
+          82: () => {
+            ElapsedTimeBar.reset();
+          },
+        },
         dependencies: [
           {
             src: 'plugin/title-footer/title-footer.js',
@@ -64,6 +85,8 @@
           },
           { src: 'plugin/copycode/copycode.js', async: false },
           { src: 'plugin/code-focus/vendor/highlight.pack.js' },
+          { src: 'plugin/elapsed-time-bar/elapsed-time-bar.js' },
+
           {
             src: 'plugin/code-focus/reveal-code-focus.js',
             async: true,
