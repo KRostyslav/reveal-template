@@ -3,6 +3,8 @@ Template
 
 ## Hotkeys
 
+* R - reset timer
+* Enter - pause/resume timer
 * E - export to pdf
 * S - show notes
 * F - fullscreen
