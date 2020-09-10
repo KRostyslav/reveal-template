@@ -21,7 +21,6 @@ Template for presentation
 
 ## Hotkeys
 
-- E - export to pdf
 - S - show notes
 - F - fullscreen
 - O or ESC - show structure
@@ -31,6 +30,13 @@ Template for presentation
 - C - show marker
 - V - hide presentation
 - M - show menu
+
+#### PdfExport hotkeys
+
+| key   | action             |
+| ----- | ------------------ |
+| E     | export to pdf      |
+
 
 #### Elapsed-time-bar hotkeys
 
