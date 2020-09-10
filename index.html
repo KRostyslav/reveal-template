@@ -24,6 +24,7 @@
       id="highlight-theme"
     />
     <link rel="stylesheet" href="plugin/copycode/copycode.css" />
+    <link rel="stylesheet" href="plugin/verticator/verticator.css" />
   </head>
   <body>
     <div class="reveal">
@@ -38,18 +39,18 @@
     </div>
 
     <script src="dist/reveal.js"></script>
+    <script src="plugin/chalkboard/plugin.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
     <script src="plugin/notes/notes.js"></script>
     <script src="plugin/markdown/markdown.js"></script>
-    <script src="plugin/highlight/highlight.js"></script>
-    <script src="plugin/search/search.js"></script>
-    <script src="plugin/zoom/zoom.js"></script>
-    <script src="plugin/chalkboard/plugin.js"></script>
-
     <script src="plugin/pdfexport/pdfexport.js"></script>
+    <script src="plugin/search/search.js"></script>
+    <script src="plugin/verticator/verticator.js"></script>
+    <script src="plugin/zoom/zoom.js"></script>
     <script>
       Reveal.initialize({
         hash: true,
-                // Elapsed-Time-Bar Plugin config
+        // Elapsed-Time-Bar Plugin config
         // your allotted time for presentation
         allottedTime: 1 * 60 * 1000, // 60 minutes - 1 hour
         // - (optional) height of page/time progress bar
@@ -71,6 +72,10 @@
           },
         },
         dependencies: [
+          { src: 'plugin/copycode/copycode.js', async: false },
+          { src: 'plugin/code-focus/vendor/highlight.pack.js' },
+          { src: 'plugin/elapsed-time-bar/elapsed-time-bar.js' },
+          { src: 'plugin/menu/menu.js' },
           {
             src: 'plugin/title-footer/title-footer.js',
             async: true,
@@ -78,14 +83,10 @@
               title_footer.initialize();
             },
           },
-          { src: 'plugin/menu/menu.js' },
           {
             src:
               '//cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js',
           },
-          { src: 'plugin/copycode/copycode.js', async: false },
-          { src: 'plugin/code-focus/vendor/highlight.pack.js' },
-          { src: 'plugin/elapsed-time-bar/elapsed-time-bar.js' },
 
           {
             src: 'plugin/code-focus/reveal-code-focus.js',
@@ -96,14 +97,22 @@
           },
         ],
         plugins: [
-          RevealMarkdown,
+          PdfExport,
+          RevealChalkboard,
           RevealHighlight,
+          RevealMarkdown,
           RevealNotes,
           RevealSearch,
           RevealZoom,
-          RevealChalkboard,
-          PdfExport,
+          Verticator,
         ],
+        verticator: {
+          darktheme: true,
+          // color: 'red',
+          // oppositecolor: 'white',
+          // skipuncounted: false,
+          // clickable: true,
+        },
         chalkboard: {
           boardmarkerWidth: 3,
           chalkWidth: 7,
