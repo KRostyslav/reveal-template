@@ -16,6 +16,7 @@ Template for presentation
 - [PdfExport](https://github.com/McShelby/reveal-pdfexport)
 - Search
 - [Title-footer](https://github.com/e-gor/Reveal.js-Title-Footer)
+- [Verticator](https://github.com/Martinomagnifico/reveal.js-verticator)
 - Zoom
 
 
