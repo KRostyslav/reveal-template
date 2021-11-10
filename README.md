@@ -24,7 +24,7 @@ Template for presentation
 
 - S - show notes
 - F - fullscreen
-- O or ESC - show structure
+- O or ESC - show *structure*
 - H - back slide
 - L - right slide
 - N - next slide
